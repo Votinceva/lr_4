@@ -300,6 +300,10 @@ int shot (int map[N][N], int x, int y, int ships[NUM_SHIPS+1], int mask[N][N])
     }
     mask[x][y]= 1;
 
+    printf("%d\n", result);
+    Sleep(1000);
+
+
     return result;
 }
 
@@ -320,18 +324,14 @@ int main()
         int ships2[10] = {0, 4, 3, 3, 2, 2, 2, 1, 1, 1};
 
 
-        for (i; i <= NUM_SHIPS; i++){
+        /*for (i; i <= NUM_SHIPS; i++){
             set_rand_ships(map, ships1[i], i);
-        }
+        }*/
 
         for (i; i <= NUM_SHIPS; i++){
             set_rand_ships(map2, ships2[i], i);
         }
 
-        /*set_rand_ships(map2, 4 , 1);
-        set_rand_ships(map2, 3 , 2);
-        set_rand_ships(map2, 2 , 3);
-        set_rand_ships(map2, 1 , 3);*/
 
         int x = 2;
         int y = 2;
@@ -408,14 +408,14 @@ int main()
                     printf("Enter the coordinates of the goal\n");
                     scanf("%d", &x );
                     scanf("%d", &y );
-                    int resultShot = shot(map2, x, y, ships2, mask2);
+                    resultShot = shot(map2, x, y, ships2, mask2);
                 }
                 else {
                     printf("Computer running\n");
                     Sleep(1000);
                     x = rand()%N;
                     y = rand()%N;
-                    int resultShot = shot(map, x, y, ships1, mask);
+                    resultShot = shot(map, x, y, ships1, mask);
                 }
 
 
@@ -433,8 +433,11 @@ int main()
                     printf("Blunder\n");
                 }
 
+                printf("%d\n", resultShot);
+
                 Sleep(1000);
                 system("cls");
+
 
             } while(resultShot != 0);
 
