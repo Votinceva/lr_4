@@ -331,7 +331,10 @@ int main()
         for (i; i <= NUM_SHIPS; i++){
             set_rand_ships(map2, ships2[i], i);
         }
-
+        i = 0;
+        for (i; i <= NUM_SHIPS; i++){
+            set_rand_ships(map, ships1[i], i);
+        }
 
         int x = 2;
         int y = 2;
